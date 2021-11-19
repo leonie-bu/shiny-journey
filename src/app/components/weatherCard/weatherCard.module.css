@@ -1,0 +1,22 @@
+.container{
+    color: lightskyblue;
+}
+
+.top{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    color: darkblue;
+    border: none;
+    border-radius: 10px;
+    background: lightskyblue;
+    padding: 1rem;
+}
+
+.bottom{
+    display:grid;
+    color: darkblue;
+    border: none;
+    border-radius: 10px;
+    background: lightskyblue;
+    padding: 1rem;
+}
