@@ -6,4 +6,4 @@ export default {
     component: TodoForm,
   };
 
-  export const Todo =() :JSX.Element => <TodoForm value="Todo" onChange={() => console.log('Test')} />
+  export const TodoF =() :JSX.Element => <TodoForm value="" onChange={() => console.log('Test')} />
