@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./TodoCard.module.css";
 
 type TodoCardProps = {
     value: string,
@@ -7,9 +8,9 @@ type TodoCardProps = {
 
 export default function TodoCard({value}: TodoCardProps):JSX.Element {
     return(
-        <div>
-            <p value={todo}></p>
-            <button>Delete</button>
+        <div className={styles.cardContainer}>
+            <p className={styles.cardContainerTodo}>{value}</p>
+            <button className={styles.cardContainerButton}>Delete</button>
         </div>
         
 

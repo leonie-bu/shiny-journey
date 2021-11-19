@@ -2,12 +2,12 @@ import React from "react";
 import styles from './TodoForm.module.css';
 
 type TodoFormProps = {
-    todo: string;
-    onChange: (todo:string) => void;
+    value: string;
+    onChange: (value:string) => void;
 
 }
 
-export default function TodoForm ({todo, onChange}: TodoFormProps): JSX.Element {
+export default function TodoForm ({value, onChange}: TodoFormProps): JSX.Element {
     
     function handleSubmit() {(event:React.FormEvent<HTMLInputElement>) =>
         {event.preventDefault()}
@@ -15,7 +15,7 @@ export default function TodoForm ({todo, onChange}: TodoFormProps): JSX.Element 
 
     return(
         <form onSubmit={handleSubmit}>
-            <input type="text" value={todo} onChange={(event) => onChange(event.target.value)} placeholder="Enter To Do Here" className={styles.input}></input>
+            <input type="text" value={value} onChange={(event) => onChange(event.target.value)} placeholder="Enter To Do Here" className={styles.input}></input>
             <button type="submit" className={styles.button}>Add</button>
         </form>
         
