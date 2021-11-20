@@ -10,6 +10,9 @@ export default function Weather():JSX.Element {
     };
 
     return(
-        <SearchField value={city} onChange={(value:string) => handleChange(value)} />
+        <div className={styles.container}>
+            <SearchField  value={city} onChange={(value:string) => handleChange(value)} />
+        </div>
+        
     );
 }
