@@ -9,14 +9,11 @@ type SearchFieldProps = {
 };
 
 export default function SearchField({value, onChange}:SearchFieldProps) :JSX.Element {
-    function handleSubmit() {(event:React.FormEvent<HTMLInputElement>) =>
-        {event.preventDefault()}
-    };
     
     return(
-        <form className={styles.search} onSubmit={handleSubmit}>
+        <div className={styles.search}>
             <input className={styles.searchInput} type="text" placeholder="Gib eine Stadt ein" value={value} onChange={(event) => onChange(event.target.value)} />
             <button className={styles.searchButton} type="submit">Suche</button>
-        </form>
+        </div>
     )
 }
