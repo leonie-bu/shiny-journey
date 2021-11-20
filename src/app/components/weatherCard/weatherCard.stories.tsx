@@ -6,4 +6,4 @@ export default {
     component: WeatherCard,
   };
 
-  export const Card = () : JSX.Element => <WeatherCard value="" temp={3} tempMin={4} tempMax={5} />
+  export const Card = () : JSX.Element => <WeatherCard value="" todayTemp="" todayTempMin="" todayTempMax="" />
