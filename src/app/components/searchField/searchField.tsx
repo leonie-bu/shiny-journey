@@ -3,7 +3,8 @@ import styles from './searchField.module.css';
 
 type SearchFieldProps = {
     value: string,
-    onChange: (value:string) => void
+    onChange: (value:string) => void,
+    className?: string
 
 };
 
