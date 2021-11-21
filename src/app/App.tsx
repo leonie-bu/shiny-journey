@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Weather from './pages/WeatherPage';
+import { Weather } from './pages/WeatherPage';
 
 function App(): JSX.Element {
 
@@ -8,6 +8,7 @@ function App(): JSX.Element {
     <BrowserRouter>
           <Switch>
             <Route path="/">
+              <h1>building a weather app</h1>
               <Weather />
             </Route>
           </Switch>
