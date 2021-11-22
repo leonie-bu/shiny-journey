@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import SearchField from "../components/searchField/searchField";
-// import WeatherCard from "../components/weatherCard/weatherCard";
 
 export function Weather() :JSX.Element {
     const [locations, setLocations] = useState('');
     const [weather, setWeather] = useState({});
-    // const weatherData = useWeather(locations);
+   
     
     useEffect(() => {
                 handleClick();
-            }, [] //Check if something should be added to array. If sth is added --> make handleClick function an async&await function?
+            }, []
             );
         
             function handleClick() {
@@ -44,77 +43,3 @@ export function Weather() :JSX.Element {
         </div>
     )
 };
-
-
-
-
-
-
-// ==================================================================================================================================================================================================================
-// ---------------------------------------------------------------------------------------------------------------
-// From: How to make a weather App with React JS, Priyanshu Saraf, medium.com
-// here we go according to the city name we type in (= locations).
-// useEffect and function handleClick moved to useFetch in hooks folder. 
-//     const [weather, setWeather] = useState({});
-//     const [locations, setLocations] = useState('');
-
-//     useEffect(() => {
-//         handleClick();
-//     }, [] //Check if something should be added to array. If sth is added --> make handleClick function an async&await function?
-//     );
-
-//     function handleClick() {
-//         fetch(
-//             `https://api.openweathermap.org/data/2.5/weather?q=${locations}&appid=7a95b81b02eff1a081f3d8c8501afa0e&lang=de`
-//         )
-//             .then((res) => {
-//                 if (res.ok) {
-//                     console.log(res.status);
-//                     return res.json();
-//                 } else {
-//                     if (res.status === 404) {
-//                         return alert("Oops, there seems to be an error because of a wrong location.");
-//                     }
-//                     alert("Oops, there seems to be an error.");
-//                     throw new Error("You have an error")
-//                 }
-//             })
-//             .then((object) => {
-//                 setWeather(object);
-//                 console.log(weather);
-//             })
-//             .catch((error) => console.log(error));
-//         }
-// ---------------------------------------------------------------------------------------------------------------
-// From: How to build a Weather App with React and React Hooks, Nishant Kumar, freecodecamp
-// in this example, we use lat and long as our useState variables and with the useEffect function, we checked our own geolocation based on lat and long.
-//     const [lat, setLat] = useState<number>();
-//     const [long, setLong] = useState<number>();
-//     const [data, setData] = useState([]);
-
-//     useEffect(() => {
-//         const fetchData = async () => {
-//         navigator.geolocation.getCurrentPosition(function(position) {
-//           setLat(position.coords.latitude);
-//           setLong(position.coords.longitude);
-//         });
-
-//         console.log("Latitude is:", lat)
-//         console.log("Longitude is:", long)
-    
-//         await fetch(`${process.env.REACT_APP_API_URL}&appid=${process.env.REACT_APP_API_KEY}`)
-//                 .then(res => res.json())
-//                 .then(result => {
-//                     setData(result)
-//                     console.log(result);
-//                 });
-//     }
-//     fetchData();
-//     console.log(data);
-//       }, [lat, long]);
-
-//       return(
-//           <div>
-//               {(typeof lat != undefined) ? (<WeatherCard name={""} />) : (<div>empty</div>)}
-//           </div>
-//       )
