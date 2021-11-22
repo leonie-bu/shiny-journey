@@ -6,4 +6,4 @@ export default {
     component: SearchField,
   };
 
-  export const Search =() :JSX.Element => <SearchField value="" onChange={() => console.log('Test')} />
+  export const Search =() :JSX.Element => <SearchField locations="" setLocations={() => console.log('TestOnChange')} handleClick={() => console.log('TestHandleClick')} />
