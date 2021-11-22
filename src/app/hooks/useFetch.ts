@@ -28,7 +28,7 @@ export default function useFetch<T>(url:string): {
         }
         useEffect(() => {
             handleClick();
-        }, [] //Check if something should be added to array. If sth is added --> make handleClick function an async&await function?
+        }, []
         );
         return { weather, handleClick };
 }
