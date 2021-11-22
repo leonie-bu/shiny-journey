@@ -2,18 +2,19 @@ import React from "react";
 import styles from './searchField.module.css';
 
 type SearchFieldProps = {
-    value: string,
-    onChange: (value:string) => void,
-    className?: string
+    locations: string,
+    setLocations: (locations:string) => void,
+    className?: string,
+    handleClick: () => void,
 
 };
 
-export default function SearchField({value, onChange}:SearchFieldProps) :JSX.Element {
+export default function SearchField({locations, setLocations, handleClick}:SearchFieldProps) :JSX.Element {
     
     return(
         <div className={styles.search}>
-            <input className={styles.searchInput} type="text" placeholder="Gib eine Stadt ein" value={value} onChange={(event) => onChange(event.target.value)} />
-            <button className={styles.searchButton} type="submit">Suche</button>
+            <input className={styles.searchInput} type="text" placeholder="Gib eine Stadt ein" value={locations} onChange={(event) => setLocations(event.target.value)} />
+            <button className={styles.searchButton} onClick={handleClick}>Suche</button>
         </div>
     )
 }
