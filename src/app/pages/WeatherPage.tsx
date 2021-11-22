@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import WeatherCard from "../components/weatherCard/weatherCard";
+import SearchField from "../components/searchField/searchField";
 
 export function Weather() :JSX.Element {
-    const [weather, setWeater] = useState();
-    const [locations, setLocations] = useState();
+    const [weather, setWeater] = useState({});
+    const [locations, setLocations] = useState('');
 
     useEffect(() => {
         handleClick();
@@ -12,7 +12,7 @@ export function Weather() :JSX.Element {
 
     function handleClick() {
         fetch(
-            'http://api.openweathermap.org/data/2.5/weather?q={locations}&&appid={REACT_APP_API_KEY}units={metric}&lang={de}'
+            `https://api.openweathermap.org/data/2.5/weather?q=${locations}&appid=7a95b81b02eff1a081f3d8c8501afa0e&lang=de`
         )
             .then((res) => {
                 if (res.ok) {
@@ -34,7 +34,9 @@ export function Weather() :JSX.Element {
         }
 
     return(
-        <div></div>
+        <div>
+            <SearchField locations={locations} setLocations={setLocations} handleClick={handleClick} />
+        </div>
     )
 }
 // ---------------------------------------------------------------------------------------------------------------
